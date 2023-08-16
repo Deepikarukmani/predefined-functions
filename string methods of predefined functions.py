@@ -1,68 +1,185 @@
-# school grade example
-# >90-A+, <80- A, >70 -B+, >60 -B, <60 - C
+#list type
 
-mark = int(input("ENTER YOUR MARK : "))
-if mark>=90:
-    print("A+")
-elif mark<=80:
-    print("A")
-elif mark>=70:
-    print("B+")
-elif mark>=60:
-    print("B")
+state = "tamilnadu india"
+l = state.split()
+print(l)
+print(type(l))
+for i in l:
+    print(l)
+
+#user defined string format
+
+state = "tamilnadu india"
+l = state.upper()
+print(l)
+print(type(l))
+l = state.lower()
+print(l)
+print(type(l))
+l = state.swapcase()
+print(l)
+print(type(l))
+l = state.title()
+print(l)
+print(type(l))
+l = state.capitalize()
+print(l)
+print(type(l))
+
+state = "tamilnaduindia600042"
+
+print(state.isalnum())
+print(state.isalpha())
+print(state.isdigit())
+print(state.isupper())
+print(state.islower())
+print(state.istitle())
+print(state.isnumeric())
+
+#startswith & endswith program:
+state = "tamil nadu india"
+print(state.startswith("tamil"))
+print(state.endswith("india"))
+print(state.startswith("india"))
+
+
+# to change first letter in caps
+
+state = "india"
+print(state[0].upper()+state[1:])
+
+# to change first letter in caps
+
+print(state[:-1]+state[-1].upper())
+
+
+#ascii keys value:
+# upper epudi work authu athuku oru program:
+
+state = "india"
+for i in range(5):
+    print(chr(ord(state[i]) -32),end= " ")
+
+
+#ascii keys value:
+# lower epudi work authu athuku oru program:
+
+state = "INDIA"
+for i in range(5):
+    print(chr(ord(state[i]) +32),end= " ")
+
+#swap case
+state = "Tamil Nadu"
+for i in range(len(state)):
+    if state[i]>="a"and state[i]<="z":
+        print(chr(ord(state[i]) -32),end= " ")
+    else:
+        print(state[i], end=" ")
+
+state = "Tamil Nadu"
+for i in range(len(state)):
+    if state[i] >= "a" and state[i] <= "z":
+        print(chr(ord(state[i]) - 32), end=" ")
+    elif state[i] >= "A" and state[i] <= "Z":
+        print(chr(ord(state[i]) + 32), end=" ")
+    else:
+        print(state[i], end=" ")
+
+
+# title program:
+state = "tamil nadu india"
+words = state.split()
+for i in words:
+    for letter in i:
+        print(letter)
+
+#capitalize program:
+state = "tamil nadu india"
+print(state[0].upper()+state[1:])
+
+#startswith & endswith program:
+state = "tamil nadu india"
+print(state.startswith("tamil"))
+print(state.endswith("india"))
+print(state.startswith("india"))
+
+
+#odd and even caps
+name = "olympic"
+for i in name:
+    print(i)
+print(name[0:7:3].upper())
+
+
+#swap pandrathu using program:
+s1 = "OYPC"
+s2 = "lmi"
+output = ''
+
+if len(s1)<len(s2):
+    small=len(s1)
 else:
-    print("C")
-
-#other example
-
-name = input("what is your name: ")
-if name== ('Deepika'):
-    print("Hi")
-    print('Hello')
-
-# find greater number
-
-no1 = int(input("Enter no1 "))   #80
-no2 = int(input("Enter no2 "))   #90
-no3 = int(input("Enter no3 "))   #100
-
-if no1>no2 and no1>no3:
-    print("Num1 is Greatest")
-elif no2>no3:
-    print("Num2 is Greatest")
+    small = len(s2)
+i=0
+while i<small:
+    output=output+s1[i]+s2[i]
+    i+=1
 else:
-    print("Num3 is Greatest")
+    output = output + s1[-1]
+    print(output)
+
+# output = output+s1[0]+s2[0]
+#
+# output = output+s1[1]+s2[1]
+#
+# output = output+s1[2]+s2[2]
+#
+# s1[0]+s2[0]+s1[1]+s2[1]+s1[2]+s2[2]
 
 
-# find odd or even
+s1 = "OYPC"
+s2 = "lmi"
+output = ''
 
-n= int(input("Enter no "))
-if n%2==0:
-    print("even")
+small = len(s1) if len(s1)<len(s2) else len(s2) ##ternary operator
+
+i=0
+while i<small:
+    output=output+s1[i]+s2[i]
+    i+=1
 else:
-    print("odd")
+    output = output + s1[-1]
+    print(output)
+
+# output = output+s1[0]+s2[0]
+#
+# output = output+s1[1]+s2[1]
+#
+# output = output+s1[2]+s2[2]
+#
+# s1[0]+s2[0]+s1[1]+s2[1]+s1[2]+s2[2]
 
 
-n= int(input("Enter no "))
-if n%3==0:
-    print("even")
+
+# how to seperate the alpha and numbers using program:
+
+# input : a1b2c3
+#outpt : abc
+
+word = "a1b2c3"
+alpha = " "
+numbers = " "
+for letter in word:
+    if letter.isalpha():
+        alpha = alpha+letter
+    else:
+        numbers = numbers+letter
+
 else:
-    print("odd")
+    print(alpha+numbers)
 
 
-# iterative statement -----> loope
-
-
-guess = 5
-while True:
-    mind = int(input("Enter your choice between 1 and 10: "))
-    if guess == mind:
-        print("correct")
-        break
-    elif guess > mind:
-        print("your guess is too small")
-    elif guess < mind:
-        print("your guess is too large")
-
-
-
+alpha= "a3"
+for letter in alpha:
+    if letter.isdigit():
+        print(chr(ord(letter)+48))
